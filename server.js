@@ -17,7 +17,10 @@ const app = express();
 
 // Middleware
 app.use(helmet()); // Security headers
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: "https://notes-frontend-cn6jbbosa-akash-aryans-projects-cde69f05.vercel.app",
+  Credential: true
+})); // Enable CORS
 app.use(morgan('dev')); // Request logging
 app.use(express.json()); // Body parser
 
