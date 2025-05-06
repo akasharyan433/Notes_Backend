@@ -12,3 +12,12 @@ const pool = mysql.createPool({
 });
 
 module.exports = pool;
+
+pool.getConnetion()
+  .then(conn => {
+  console.log("conncted to db);
+  conn.release();
+  })
+  .catch(err => {
+    console.error("failed to connect to db", ree.message);
+  });
