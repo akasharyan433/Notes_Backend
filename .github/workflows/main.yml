@@ -54,7 +54,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./backend
+          context: ./
           push: true
           tags: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/backend-repo/backend-image:${{ steps.latest-tag.outputs.tag }}
           cache-from: type=gha
